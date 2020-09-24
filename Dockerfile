@@ -35,7 +35,7 @@ ENV DISPLAY=:1
 # install Mu Zero
 RUN cd /opt \
     && git clone https://github.com/werner-duvaud/muzero-general.git \
-    && cd /muzero-general \
+    && cd muzero-general \
     && pip3 install -r 'requirements.txt' \
     && rm -rf ~/.cache/pip 
 

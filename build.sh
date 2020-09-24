@@ -1,1 +1,1 @@
-docker build -t MuZeroDocker:cpu .
+docker build -t muzerodocker:cpu .

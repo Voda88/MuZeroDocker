@@ -19,6 +19,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         firefox \
         swig\
         python3-pip\
+        git\
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
@@ -34,8 +35,8 @@ ENV DISPLAY=:1
 # install Mu Zero
 RUN cd /opt \
     && git clone https://github.com/werner-duvaud/muzero-general.git \
-    && cd /opt/gym \
-    && pip3 install -e '.[all]' \
+    && cd /muzero-general \
+    && pip3 install -r 'requirements.txt' \
     && rm -rf ~/.cache/pip 
 
 # vnc port

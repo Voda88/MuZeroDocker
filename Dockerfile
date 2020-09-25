@@ -19,6 +19,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         firefox \
         swig\
         python3-pip\
+        python3-dev\
         git\
     && apt-get autoclean \
     && apt-get autoremove \

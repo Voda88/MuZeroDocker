@@ -17,11 +17,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
         lxde x11vnc xvfb \
         gtk2-engines-murrine gnome-themes-standard gtk2-engines-pixbuf gtk2-engines-murrine arc-theme \
         firefox \
-        swig\
         gcc\
         python3-pip\
-        python3-dev\
-        git\
         g++\
     && apt-get autoclean \
     && apt-get autoremove \
@@ -34,6 +31,15 @@ RUN chmod +x /bin/tini
 
 # set default screen to 1 (this is crucial for gym's rendering)
 ENV DISPLAY=:1
+
+###########################################
+# gym
+# see: https://github.com/openai/gym
+###########################################
+RUN apt-get update && apt-get install -y \
+        git vim \
+        python3-numpy python3-dev cmake zlib1g-dev libjpeg-dev xvfb ffmpeg xorg-dev python3-opengl libboost-all-dev libsdl2-dev swig \
+    && rm -rf /var/lib/apt/lists/*
 
 # install Mu Zero
 RUN cd /opt \

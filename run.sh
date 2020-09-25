@@ -1,1 +1,1 @@
-docker run -it --rm -p 5900:5900 muzerodocker:cpu
+docker run -it --rm -p 5900:5900 ta/muzerodocker:cpu
